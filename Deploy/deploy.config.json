@@ -1,0 +1,10 @@
+[
+  {
+    "solution": "AngularHelloWorld",
+    "name": "AngularHelloWorld",
+    "dist": "../../AngularHelloWorld/dist",
+    "url": "http://crm:5555/CRM/XRMServices/2011/Organization.svc",
+    "user": "DEV\\Administrator",
+    "password": "Martin01!"
+  }
+]

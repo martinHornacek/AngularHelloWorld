@@ -33,8 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +53,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ImportManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceTypeEnum.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="deploy.config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AngularHelloWorld\src\assets\.gitkeep" />
+    <None Include="AngularHelloWorld\src\browserslist" />
+    <None Include="AngularHelloWorld\src\tsconfig.app.json" />
+    <None Include="AngularHelloWorld\src\tsconfig.spec.json" />
+    <None Include="AngularHelloWorld\src\tslint.json" />
+    <None Include="AngularHelloWorld\tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AngularHelloWorld\src\app\app.component.css" />
+    <Content Include="AngularHelloWorld\src\app\app.component.html" />
+    <Content Include="AngularHelloWorld\src\favicon.ico" />
+    <Content Include="AngularHelloWorld\src\index.html" />
+    <Content Include="AngularHelloWorld\src\karma.conf.js" />
+    <Content Include="AngularHelloWorld\src\styles.css" />
+    <Content Include="libs\Microsoft.Crm.Sdk.Proxy.dll" />
+    <Content Include="libs\Microsoft.Xrm.Sdk.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="AngularHelloWorld\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\app\app.component.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\app\app.module.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\environments\environment.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\main.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\polyfills.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\test.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>:: cd "$(ProjectDir)\AngularHelloWorld"
+:: ng build --prod --output-hashing none
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

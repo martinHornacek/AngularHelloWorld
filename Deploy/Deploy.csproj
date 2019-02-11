@@ -94,8 +94,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>:: cd "$(ProjectDir)\AngularHelloWorld"
-:: ng build --prod --output-hashing none
+    <PostBuildEvent>cd "$(ProjectDir)\AngularHelloWorld"
+ng build --prod --output-hashing none
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -61,6 +61,7 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AngularHelloWorld\proxy-config.json" />
     <None Include="deploy.config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -86,6 +87,8 @@
     <TypeScriptCompile Include="AngularHelloWorld\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="AngularHelloWorld\src\app\app.component.ts" />
     <TypeScriptCompile Include="AngularHelloWorld\src\app\app.module.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\app\crm.service.spec.ts" />
+    <TypeScriptCompile Include="AngularHelloWorld\src\app\crm.service.ts" />
     <TypeScriptCompile Include="AngularHelloWorld\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="AngularHelloWorld\src\environments\environment.ts" />
     <TypeScriptCompile Include="AngularHelloWorld\src\main.ts" />

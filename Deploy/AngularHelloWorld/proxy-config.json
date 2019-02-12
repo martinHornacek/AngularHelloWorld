@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+    "target": "http://crm:5555/CRM",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "auth": "auser:Martin01!"
+  }
+}

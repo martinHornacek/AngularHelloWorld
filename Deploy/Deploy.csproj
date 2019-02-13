@@ -97,8 +97,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>cd "$(ProjectDir)\AngularHelloWorld"
-ng build --prod --output-hashing none
-</PostBuildEvent>
+    <PostBuildEvent>:: cd "$(ProjectDir)\AngularHelloWorld"
+:: ng build --prod --output-hashing none
+:: ng serve --proxy-config proxy-config.json --open
+:: https://github.com/kip-dk/angular-xrm-webresource</PostBuildEvent>
   </PropertyGroup>
 </Project>

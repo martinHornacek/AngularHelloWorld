@@ -7,15 +7,15 @@ import { CrmService, Entity } from './crm.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularHelloWorld';
-  errorMessage: string = null;
-  accounts: Entity[] = [];
+    title = 'AngularHelloWorld';
+    errorMessage: string = null;
+    accounts: Entity[] = [];
 
-  constructor(private crmService: CrmService) { }
+    constructor(private crmService: CrmService) { }
 
-  ngOnInit() {
-    this.crmService
-      .search("accounts", "name", null)
-      .subscribe(entities => this.accounts = entities, error => this.errorMessage = <any>error);
-  }
+    ngOnInit() {
+        this.crmService
+          .search("accounts", "name", null)
+          .subscribe(entities => this.accounts = entities, error => this.errorMessage = <any>error);
+    }
 }

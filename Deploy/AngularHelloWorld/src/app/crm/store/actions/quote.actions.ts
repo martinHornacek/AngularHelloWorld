@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { Quote } from '../states/quote.states';
+import { Guid } from 'xrm-webapi';
 
 export enum QuoteActionTypes {
   // TODO: use better word than [Configuration]
@@ -29,15 +30,15 @@ export class LoadQuoteFromCrmFailureAction implements Action {
   constructor(public payload: { error: any }) { }
 }
 
-/** Save Configuration To Server */
+/** Save Configuration To Crm */
 export class SaveQuoteToCrmAction implements Action {
   readonly type = QuoteActionTypes.SaveQuoteToCrm;
-  constructor(public payload: { name: string/*ConfigurationState*/ }) { }
+  constructor(public payload: { quote: Quote/*ConfigurationState*/ }) { }
 }
 
 export class SaveQuoteToCrmSuccessAction implements Action {
   readonly type = QuoteActionTypes.SaveQuoteToCrmSuccess;
-  constructor(public payload: { quoteId: string }) { }
+  constructor(public payload: { quoteId: Guid }) { }
 }
 
 export class SaveQuoteToCrmFailureAction implements Action {

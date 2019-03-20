@@ -11,11 +11,13 @@ const initialState: QuoteState = {
 export function quoteReducer(state = initialState, action: QuoteActions): QuoteState {
     switch (action.type) {
         case QuoteActionTypes.LoadQuoteFromCrmSuccess:
-        return {
-            ...state,
-            quoteid: action.payload.id,
-            name: action.payload.name,
-            quotes: [...state.quotes, action.payload]
-        };
+            return {
+                ...state,
+                quoteid: action.payload.id,
+                name: action.payload.name,
+                quotes: [...state.quotes, action.payload]
+            };
+        default:
+            return state;
     }
 }

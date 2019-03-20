@@ -11,7 +11,6 @@ import { QuoteEffects } from './store/effects/quote.effects';
   imports: [
     CommonModule,
     StoreModule.forFeature('quote', quoteReducer),
-    //StoreModule.forRoot(quoteReducer),
     EffectsModule.forFeature([QuoteEffects]),
   ]
 })
